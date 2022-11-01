@@ -23,6 +23,11 @@
         .imgSize{
             width: 800px;
         }
+        .describe{
+            width: 80%;
+            border-left: 10px solid #333;
+            padding-left: 15px;
+        }
     </style>
 </head>
 <body>
@@ -80,5 +85,41 @@
         <li><img src="./images/19.png" alt=""></li>
         <li><img src="./images/20.png" alt=""></li>
     </ul>
+    <h2>gitignore文件</h2>
+    <ul>
+        <li class="describe">在一些项目中，我们不想让本地仓库的所有文件都上传到远程仓库中，而是有选择的上传，比如：一些依赖文件（node_modules下的依赖）、bin 目录下的文件、测试文件等。一方面将一些依赖、测试文件都上传到远程传输量很大，另一方面，一些文件对于你这边是可用的，在另一个人那可能就不可用了，比如：本地配置文件。</li>
+        <li>空行不匹配任何文件；</li>
+        <li>如果本地仓库文件已被跟踪，那么即使在 .gitignore 中设置了忽略，也不起作用；</li>
+        <li>.gitignore 文件也会被上传的到远程仓库，所以，同一个仓库的人可以使用同一个.gitignore文件；</li>
+        <li class="command" style="height: auto;width:60%">
+            # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.<br>
+            # dependencies<br>
+            # #开头的便是注释<br>
+            <br>
+            # 忽略文件和目录<br>
+            /node_modules<br>
+            /.pnp<br>
+            .pnp.js<br>
+            <br>
+            # testing<br>
+            /coverage<br>
+            <br>
+            # production<br>
+            /build<br>
+            <br>
+            # misc<br>
+            .DS_Store<br>
+            .env.local<br>
+            .env.development.local<br>
+            .env.test.local<br>
+            .env.production.local<br>
+            <br>
+            # 使用通配符<br>
+            npm-debug.log*<br>
+            yarn-debug.log*<br>
+            yarn-error.log*<br>
+        </li>
+    </ul>
+
 </body>
 </html>
