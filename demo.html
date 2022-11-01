@@ -5,15 +5,79 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VSCode集成GitHub</title>
+    <style>
+        ul li{ 
+            line-height: 50px;
+            font-size: 22px;
+        }
+        .command{
+            width: 500px;
+            height: 50px;
+            background-color:#f8f8f8 ;
+            border: 1px solid #cecccc;
+            padding-left: 10px;
+        }
+        img{
+            border:  5px solid rgb(125, 94, 238);
+        }
+        .imgSize{
+            width: 800px;
+        }
+    </style>
 </head>
 <body>
     <h1>VSCode集成GitHub</h1>
     <h2>初始化</h2>
     <ul>
-        <li>新建项目文件夹IntegrateGitHub</li>
-        <li>VSCode打开文件夹，在源代码管理中初始化仓库；项目文件夹中出现.git文件夹</li>
-        <li>源代码管理中，文本框输入注释，点击刷新按钮[本质输入命令git add . 和 git commit]</li>
+        <li>新建项目文件夹VSCodeTest</li>
+        <li>VSCode打开项目文件夹，在源代码管理中初始化仓库；项目文件夹中出现.git文件夹</li>
+        <li><img src="./images/01.png" alt=""></li>
+        <li><img src="./images/02.png" alt=""></li>
+        <li><img src="./images/03.png" alt=""></li>
+        <li>源代码管理中，文本框输入注释，点击对号按钮&nbsp;&nbsp;[本质输入命令git add . 和 git commit]</li>
+        <li><img src="./images/04.png" alt=""></li>
     </ul>
     <h2>申请秘钥</h2>
+    <ul>
+        <li class="command">ssh-keygen -t rsa -C "邮箱"</li>
+        <li><b>注意：邮箱就是GitHub账号</b></li>
+        <li><b>操作步骤：</b></li>
+        <li>打开Git Bash Here面板，输入命令：ssh-keygen -t rsa -C "邮箱"，连敲三次回车;</li>
+        <li><img class="imgSize" src="./images/05.png" alt=""></li>
+        <li>面板中出现：Your public key has been saved in /../.id_rsa.pub，秘钥文件所在位置；</li>
+        <li><img src="./images/06.png" alt=""></li>
+        <li>编辑器打开.pub文件；</li>
+        <li><img class="imgSize" src="./images/07.png" alt=""></li>
+    </ul>
+    <h2>GitHub配置秘钥</h2>
+    <ul>
+        <li>登录GitHub，点击：头像-->Settings-->SSH and GPG keys-->New SSh key；</li>
+        <li><img src="./images/08.png" alt=""></li>
+        <li><img class="imgSize" src="./images/09.png" alt=""></li>
+        <li>SSH keys / Add new中：Title文本框，起名称；Key文本框，.pub文件中的内容粘贴至此，点击Add SSH key；</li>
+        <li><img class="imgSize" src="./images/10.png" alt=""></li>
+        <li><img class="imgSize" src="./images/11.png" alt=""></li>
+    </ul>
+    <h2>测试秘钥是否匹配</h2>
+    <ul>
+        <li>Git Bash Here面板，输入命令：ssh -T 'git@github.com'；</li>
+        <li><img class="imgSize" src="./images/12.png" alt=""></li>
+        <li>面板中出现：Hi ...，联通了，没有出现，配置错误；</li>
+    </ul>
+    <h2>创建GitHub仓库</h2>
+    <ul>
+        <li>点击+ --> New repository；</li>
+        <li><img src="./images/13.png" alt=""></li>
+        <li>Create a new repository面板中：</li>
+        <li><img  src="./images/14.png" alt=""></li>
+        <li><img class="imgSize" src="./images/15.png" alt=""></li>
+        <li><img class="imgSize" src="./images/16.png" alt=""></li>
+        <li>Git Bash Here面板，输入红色文本框内的两条命令：</li>
+        <li><img src="./images/17.png" alt=""></li>
+        <li><b>注意：两条命令报错，可在VSCode中，提交</b></li>
+        <li><img src="./images/18.png" alt=""></li>
+        <li><b>一旦push过一次，今后每一次都可以使用VSCode提交了</b></li>
+
+    </ul>
 </body>
 </html>
